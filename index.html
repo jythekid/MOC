@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Man of Concrete | Premium Concrete Contractor in Whiteland, IN</title>
+  <meta name="description" content="Man of Concrete provides premium concrete driveways, patios, slabs, repairs, and decorative concrete services in Whiteland, Indiana and surrounding areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b0d10;
+      --ink-2: #15191f;
+      --graphite: #242a31;
+      --concrete: #eef0f2;
+      --concrete-2: #d7dce0;
+      --muted: #68717d;
+      --white: #ffffff;
+      --gold: #f0b84a;
+      --orange: #ff6b2c;
+      --blue: #2f6fed;
+      --green: #14b66a;
+      --shadow: 0 24px 70px rgba(6, 10, 15, .18);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      background: var(--ink);
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .topbar-inner, .nav-inner, .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; min-height: 38px; gap: 16px; }
+    .social { display: flex; gap: 14px; font-weight: 800; color: #fff; }
+    .social a { opacity: .84; transition: .2s ease; }
+    .social a:hover { color: var(--gold); opacity: 1; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(11, 13, 16, .08);
+    }
+    .nav-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; letter-spacing: -.03em; }
+    .mark {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      color: #fff; background: linear-gradient(135deg, var(--ink), var(--graphite));
+      border: 2px solid var(--gold); box-shadow: 0 10px 28px rgba(0,0,0,.18);
+      font-family: 'Oswald', sans-serif; font-size: 20px;
+    }
+    .brand span:last-child { display: block; font-size: 12px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; margin-top: -2px; }
+    .links { display: flex; align-items: center; gap: 28px; font-weight: 800; font-size: 14px; color: #2b3138; }
+    .links a { position: relative; }
+    .links a::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 0; height: 2px; background: var(--gold); transition: .2s ease; }
+    .links a:hover::after { width: 100%; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 22px;
+      background: var(--gold); color: #111; font-weight: 1000;
+      border: 0; border-radius: 0; box-shadow: 0 14px 28px rgba(240,184,74,.26);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); background: #ffd064; box-shadow: 0 18px 35px rgba(240,184,74,.34); }
+    .btn.dark { background: var(--ink); color: #fff; box-shadow: none; }
+    .btn.dark:hover { background: #252a31; }
+    .btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.28); box-shadow: none; }
+    .btn.ghost:hover { border-color: var(--gold); background: rgba(255,255,255,.08); }
+
+    .hero {
+      position: relative; min-height: 740px; color: #fff; overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(7,9,12,.97) 0%, rgba(7,9,12,.88) 42%, rgba(7,9,12,.54) 70%, rgba(7,9,12,.78) 100%),
+        radial-gradient(circle at 78% 22%, rgba(240,184,74,.28), transparent 30%),
+        url('assets/684252480_18345117313245669_5837698614848539748_n.jpg') center right / cover no-repeat,
+        linear-gradient(135deg, #101419 0%, #242a31 44%, #11151a 100%);
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; opacity: .22;
+      background-image:
+        linear-gradient(120deg, transparent 0 47%, rgba(255,255,255,.12) 48% 49%, transparent 50% 100%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 7px);
+      transform: skewY(-5deg) scale(1.2);
+    }
+    .hero::after {
+      content: ''; position: absolute; right: -8vw; bottom: -18vh; width: 58vw; height: 58vw;
+      background: radial-gradient(circle, rgba(255,255,255,.12) 0 1px, transparent 2px 100%);
+      background-size: 18px 18px; opacity: .55; transform: rotate(-12deg);
+    }
+    .hero-grid {
+      position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); margin: 0 auto;
+      min-height: 740px; display: grid; grid-template-columns: 1.04fr .96fr; gap: 50px; align-items: center;
+      padding: 70px 0;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 1000; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; }
+    .eyebrow::before { content: ''; width: 42px; height: 2px; background: var(--gold); }
+    h1, h2, h3 { margin: 0; line-height: .98; letter-spacing: -.055em; }
+    h1 { margin-top: 22px; font-family: 'Oswald', sans-serif; font-size: clamp(54px, 8vw, 106px); text-transform: uppercase; max-width: 850px; }
+    .hero p { margin: 24px 0 0; color: rgba(255,255,255,.78); font-size: clamp(17px, 2vw, 21px); line-height: 1.65; max-width: 660px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .trust-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; max-width: 680px; }
+    .trust-card { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.06); padding: 18px; backdrop-filter: blur(12px); }
+    .trust-card strong { display: block; font-size: 26px; color: #fff; letter-spacing: -.04em; }
+    .trust-card span { color: rgba(255,255,255,.65); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+
+    .visual-card { position: relative; min-height: 540px; }
+    .slab {
+      position: absolute; inset: 30px 0 0 50px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0) 42%, rgba(8,10,12,.52) 100%),
+        url('assets/690336461_18346176739245669_3856852380649629698_n.jpg') center / cover no-repeat;
+      box-shadow: var(--shadow); transform: perspective(900px) rotateY(-12deg) rotateX(7deg); overflow: hidden;
+    }
+    .slab::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.16), transparent 42%), repeating-linear-gradient(90deg, rgba(255,255,255,.10) 0 1px, transparent 1px 86px); }
+    .slab::after { content: 'RECENT WORK'; position: absolute; left: 34px; bottom: 28px; color: rgba(255,255,255,.72); font-family: 'Oswald'; font-size: 48px; letter-spacing: -.04em; }
+    .photo-tile {
+      position: absolute; left: 0; top: 74px; width: 310px; padding: 24px; background: rgba(13,15,18,.88); border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow);
+    }
+    .photo-tile .circle { width: 82px; height: 82px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--gold)); margin-bottom: 22px; display: grid; place-items: center; font-family: 'Oswald'; font-size: 34px; color: #111; }
+    .photo-tile h3 { font-size: 24px; font-family: 'Oswald'; text-transform: uppercase; letter-spacing: -.02em; }
+    .photo-tile p { margin: 12px 0 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.65); }
+    .quote-card {
+      position: absolute; right: -6px; bottom: 42px; width: 300px; padding: 24px; background: #fff; color: var(--ink); box-shadow: var(--shadow);
+    }
+    .quote-card b { display: block; font-size: 46px; line-height: 1; color: var(--gold); }
+    .quote-card p { margin: 10px 0 0; color: var(--graphite); font-size: 15px; line-height: 1.55; }
+
+    section { padding: 96px 0; scroll-margin-top: 112px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 44px; }
+    .section-head h2 { font-family: 'Oswald'; font-size: clamp(42px, 5.2vw, 72px); text-transform: uppercase; max-width: 720px; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.65; max-width: 440px; font-size: 17px; }
+
+    .services { background: var(--concrete); position: relative; overflow: hidden; }
+    .services::before { content:''; position:absolute; inset:0; opacity:.5; background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 30%), radial-gradient(circle at 86% 10%, rgba(240,184,74,.24), transparent 28%); }
+    .services .container { position: relative; z-index: 1; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card { background: #fff; padding: 30px; min-height: 285px; border: 1px solid rgba(11,13,16,.08); display: flex; flex-direction: column; justify-content: space-between; transition: .25s ease; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 22px 55px rgba(11,13,16,.13); }
+    .icon { width: 54px; height: 54px; background: var(--ink); color: var(--gold); display: grid; place-items: center; font-weight: 1000; font-size: 22px; }
+    .service-card h3 { font-family: 'Oswald'; font-size: 28px; text-transform: uppercase; letter-spacing: -.025em; margin-top: 26px; }
+    .service-card p { color: var(--muted); line-height: 1.65; margin: 14px 0 0; }
+    .service-card small { margin-top: 24px; font-weight: 1000; letter-spacing: .12em; color: var(--orange); text-transform: uppercase; }
+
+    .work { background: #fff; padding-top: 34px; }
+    .work-strip {
+      display: grid;
+      grid-template-columns: 1.35fr .8fr .8fr;
+      grid-auto-rows: 250px;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .work-photo {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      min-height: 250px;
+      box-shadow: 0 20px 50px rgba(8,10,12,.12);
+    }
+    .work-photo.large { grid-row: span 2; }
+    .work-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02) contrast(1.04); transition: transform .35s ease, filter .35s ease; }
+    .work-photo:hover img { transform: scale(1.045); filter: saturate(1.08) contrast(1.08); }
+    .work-photo::after { content:''; position:absolute; inset:0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.62)); opacity:.9; }
+    .work-photo figcaption {
+      position: absolute; left: 22px; right: 22px; bottom: 18px; z-index: 1;
+      color: #fff; font-weight: 1000; text-transform: uppercase; letter-spacing: .08em; font-size: 12px;
+    }
+    .work-photo figcaption span { display:block; margin-top: 5px; color: rgba(255,255,255,.72); font-weight: 700; text-transform: none; letter-spacing: 0; font-size: 14px; line-height:1.35; }
+    .mini-gallery { display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+    .mini-gallery img { width:100%; height: 190px; object-fit: cover; filter: saturate(1.02) contrast(1.03); }
+
+    .about { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+    .about-panel {
+      background:
+        linear-gradient(180deg, rgba(10,12,15,.14), rgba(10,12,15,.78)),
+        url('assets/631203329_1497828712344436_4250015974784835434_n.jpg') center / cover no-repeat;
+      color: #fff; min-height: 560px; padding: 34px; position: relative; overflow: hidden;
+    }
+    .about-panel::before { content:''; position:absolute; inset:34px; border:1px solid rgba(255,255,255,.16); }
+    .about-panel::after { content:''; position:absolute; right:-90px; bottom:-110px; width:360px; height:360px; background:var(--gold); opacity:.9; transform: rotate(18deg); }
+    .about-number { position: relative; z-index: 1; font-family:'Oswald'; font-size: clamp(90px, 14vw, 168px); line-height:.85; letter-spacing:-.08em; color: var(--gold); }
+    .about-panel p { position: relative; z-index: 1; margin-top: 28px; max-width: 330px; color: rgba(255,255,255,.76); line-height: 1.7; }
+    .about-copy h2 { font-family:'Oswald'; font-size: clamp(42px, 5vw, 70px); text-transform:uppercase; }
+    .about-copy p { color: var(--muted); line-height: 1.75; font-size: 17px; }
+    .checklist { display: grid; gap: 14px; margin: 28px 0 34px; }
+    .check { display: flex; gap: 12px; align-items: flex-start; font-weight: 900; }
+    .check i { flex:0 0 25px; height:25px; background: var(--green); color:#fff; display:grid; place-items:center; font-style:normal; font-size:14px; }
+
+    .testimonials { background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+    .testimonials::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 90% 0%, rgba(240,184,74,.22), transparent 30%); }
+    .testimonials .container { position:relative; z-index:1; }
+    .testimonials .section-head p { color: rgba(255,255,255,.62); }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .testimonial { padding: 30px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+    .stars { color: var(--gold); letter-spacing: 3px; font-size: 18px; }
+    .testimonial p { color: rgba(255,255,255,.78); line-height: 1.7; font-size: 16px; margin: 22px 0; }
+    .person { display:flex; align-items:center; gap:12px; }
+    .avatar { width:44px; height:44px; border-radius:50%; background: linear-gradient(135deg, var(--gold), var(--orange)); display:grid; place-items:center; color:#111; font-weight:1000; }
+    .person strong { display:block; }
+    .person span { color: rgba(255,255,255,.52); font-size: 13px; }
+
+    .cta { padding: 0; background: var(--concrete); }
+    .cta-wrap {
+      width: min(var(--max), calc(100% - 40px)); margin: 0 auto; transform: translateY(72px);
+      background: linear-gradient(135deg, var(--gold), #ffd86c 55%, #f28c38);
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center;
+      padding: clamp(34px, 5vw, 62px); box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .cta-wrap::after { content:''; position:absolute; right:-70px; top:-100px; width:310px; height:310px; border: 42px solid rgba(255,255,255,.28); transform: rotate(22deg); }
+    .cta h2 { position:relative; z-index:1; font-family:'Oswald'; font-size: clamp(40px, 5vw, 68px); text-transform:uppercase; color:#111; }
+    .cta p { position:relative; z-index:1; margin: 14px 0 0; color: rgba(17,17,17,.72); font-size: 18px; line-height:1.55; max-width:650px; }
+    .cta-actions { position:relative; z-index:1; display:flex; justify-content:flex-end; gap:12px; flex-wrap:wrap; }
+
+    footer { padding: 150px 0 42px; background: var(--ink); color:#fff; }
+    .footer-grid { display:grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 30px; }
+    footer h3 { font-family:'Oswald'; text-transform:uppercase; font-size:26px; }
+    footer p, footer a { color: rgba(255,255,255,.62); line-height:1.7; }
+    footer a:hover { color: var(--gold); }
+    .copyright { margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.42); font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .topbar-inner { justify-content: center; text-align: center; flex-wrap: wrap; padding: 8px 0; }
+      .links { display: none; }
+      .nav-inner { min-height: 68px; }
+      .hero-grid { grid-template-columns: 1fr; min-height: auto; padding: 70px 0 90px; }
+      .visual-card { min-height: 420px; }
+      .slab { inset: 20px 0 0 40px; }
+      .section-head, .about-grid, .cta-wrap, .footer-grid { grid-template-columns: 1fr; display: grid; }
+      .section-head { align-items: start; }
+      .service-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .work-strip { grid-template-columns: 1fr 1fr; grid-auto-rows: 230px; }
+      .work-photo.large { grid-column: span 2; grid-row: span 1; }
+      .mini-gallery { grid-template-columns: repeat(2, 1fr); }
+      .cta-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .topbar-inner, .nav-inner, .container, .hero-grid, .cta-wrap { width: min(100% - 28px, var(--max)); }
+      .nav .btn { display:none; }
+      .hero { min-height: auto; }
+      .hero-actions .btn { width: 100%; }
+      .trust-row { grid-template-columns: 1fr; }
+      .visual-card { display:none; }
+      section { padding: 72px 0; }
+      .service-card, .testimonial { padding: 24px; }
+      .work-strip, .mini-gallery { grid-template-columns: 1fr; }
+      .work-photo.large { grid-column: span 1; }
+      .mini-gallery img { height: 230px; }
+      .about-panel { min-height: 430px; }
+      .cta-actions .btn { width: 100%; }
+      footer { padding-top: 128px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Whiteland, IN • Concrete driveways, patios, slabs & repairs</span>
+      <div class="social">
+        <a href="https://www.facebook.com/Manofconcrete86/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/man_of_concrete/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Man of Concrete home">
+        <span class="mark">MC</span>
+        <span>Man of Concrete <span>Built right. Finished clean.</span></span>
+      </a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn" href="https://www.facebook.com/Manofconcrete86/" target="_blank" rel="noopener">Get a Free Quote</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Premium Concrete Contractor</div>
+        <h1>Concrete Work That Makes Your Property Look Finished.</h1>
+        <p>Man of Concrete helps homeowners and small businesses upgrade curb appeal with clean pours, strong prep, sharp edges, and dependable communication from quote to final wash-down.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://www.facebook.com/Manofconcrete86/" target="_blank" rel="noopener">Request Your Quote</a>
+          <a class="btn ghost" href="#services">View Services</a>
+        </div>
+        <div class="trust-row" aria-label="Key selling points">
+          <div class="trust-card"><strong>Clean</strong><span>Professional finish</span></div>
+          <div class="trust-card"><strong>Local</strong><span>Whiteland, Indiana</span></div>
+          <div class="trust-card"><strong>Built</strong><span>For daily use</span></div>
+        </div>
+      </div>
+      <div class="visual-card" aria-hidden="true">
+        <div class="slab"></div>
+        <div class="photo-tile">
+          <div class="circle">MC</div>
+          <h3>Real work. Real finish.</h3>
+          <p>Actual project photos highlight clean patio pours, walkways, slabs, prep work, and finished concrete details.</p>
+        </div>
+        <div class="quote-card">
+          <b>“</b>
+          <p>High-converting local service design: bold message, clear proof, and quote buttons placed where customers are ready to act.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Concrete services built for curb appeal and long-term strength.</h2>
+        <p>From brand-new outdoor spaces to replacing cracked concrete, the page positions Man of Concrete as the straightforward choice for clean, premium concrete work.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div>
+            <div class="icon">01</div>
+            <h3>Driveways & Extensions</h3>
+            <p>Replace cracked surfaces, widen parking areas, or create a clean new approach with a durable, properly prepared driveway pour.</p>
+          </div>
+          <small>Built to handle traffic</small>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="icon">02</div>
+            <h3>Patios & Outdoor Living</h3>
+            <p>Create a low-maintenance backyard space for grilling, seating, fire pits, and family gatherings with a crisp concrete patio.</p>
+          </div>
+          <small>Upgrade your backyard</small>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="icon">03</div>
+            <h3>Slabs, Pads & Walkways</h3>
+            <p>Clean foundations for sheds, garages, hot tubs, trash pads, sidewalks, entry paths, and practical everyday property improvements.</p>
+          </div>
+          <small>Level, clean, useful</small>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="icon">04</div>
+            <h3>Decorative Concrete</h3>
+            <p>Add premium character with broom finishes, borders, color accents, and decorative details that make the project feel custom.</p>
+          </div>
+          <small>More visual impact</small>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="icon">05</div>
+            <h3>Concrete Repair</h3>
+            <p>Improve safety and appearance by addressing worn, uneven, broken, or aging concrete before it becomes a bigger problem.</p>
+          </div>
+          <small>Restore function</small>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="icon">06</div>
+            <h3>Commercial Flatwork</h3>
+            <p>Professional flatwork for small business entries, pads, walkways, service areas, and property improvements that need to look sharp.</p>
+          </div>
+          <small>Business-ready finish</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-head">
+        <h2>Recent concrete projects with clean edges and professional finish.</h2>
+        <p>Real project photography gives visitors instant proof of quality before they ever send a message.</p>
+      </div>
+      <div class="work-strip">
+        <figure class="work-photo large">
+          <img src="assets/690336461_18346176739245669_3856852380649629698_n.jpg" alt="Finished backyard concrete patio with clean broom finish beside a home">
+          <figcaption>Patio flatwork <span>Freshly finished backyard pad with crisp borders.</span></figcaption>
+        </figure>
+        <figure class="work-photo">
+          <img src="assets/684252480_18345117313245669_5837698614848539748_n.jpg" alt="Fresh sidewalk concrete pour with caution tape and Man of Concrete truck in background">
+          <figcaption>Sidewalk pour <span>Clean form work and smooth finish in progress.</span></figcaption>
+        </figure>
+        <figure class="work-photo">
+          <img src="assets/701850672_18347254093245669_2170335764434562523_n.jpg" alt="Fresh patio concrete poured against a house with protected windows">
+          <figcaption>Protected prep <span>Careful masking around the home before the pour.</span></figcaption>
+        </figure>
+        <figure class="work-photo">
+          <img src="assets/609815598_18329054392245669_9000324022966639944_n.jpg" alt="Concrete project photo by Man of Concrete">
+          <figcaption>Residential concrete <span>Practical upgrades for everyday curb appeal.</span></figcaption>
+        </figure>
+        <figure class="work-photo">
+          <img src="assets/629654459_18334371001245669_1457300656044151288_n.jpg" alt="Concrete flatwork project photo by Man of Concrete">
+          <figcaption>Flatwork detail <span>Built for a clean look and daily use.</span></figcaption>
+        </figure>
+      </div>
+      <div class="mini-gallery" aria-label="Additional Man of Concrete project photos">
+        <img src="assets/629962916_18334371010245669_3591025557022905805_n.jpg" alt="Additional Man of Concrete project photo">
+        <img src="assets/631203329_1497828712344436_4250015974784835434_n.jpg" alt="Additional concrete work photo">
+        <img src="assets/634054297_1497828659011108_4001868073539403062_n.jpg" alt="Additional finished concrete project photo">
+        <img src="assets/657726051_18341256421245669_2716888877876017383_n.jpg" alt="Additional concrete contractor project photo">
+        <img src="assets/682652343_18345116806245669_5760197736432666365_n.jpg" alt="Additional Man of Concrete work photo">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-panel">
+        <div class="about-number">LOCAL</div>
+        <p>Designed around trust, craftsmanship, and fast quote requests — exactly what visitors need before choosing a concrete contractor.</p>
+      </div>
+      <div class="about-copy">
+        <div class="eyebrow">About Man of Concrete</div>
+        <h2>Professional concrete with a no-nonsense customer experience.</h2>
+        <p>Concrete is one of the first things people notice when they pull up to a property. This website gives Man of Concrete a premium first impression while making it easy for visitors to understand the services, see credibility, and ask for a quote.</p>
+        <p>The visual direction uses dark graphite, warm construction gold, crisp spacing, and bold typography to feel strong, modern, and dependable without looking cluttered.</p>
+        <div class="checklist">
+          <div class="check"><i>✓</i><span>Clear service categories for homeowners and small businesses</span></div>
+          <div class="check"><i>✓</i><span>Strong calls to action above the fold and throughout the page</span></div>
+          <div class="check"><i>✓</i><span>Mobile-friendly layout that keeps the quote button easy to find</span></div>
+        </div>
+        <a class="btn dark" href="https://www.instagram.com/man_of_concrete/" target="_blank" rel="noopener">See Work on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <h2>Confidence builders for customers ready to hire.</h2>
+        <p>Use these as sample review cards now, then replace with real Facebook or Google reviews when available.</p>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“The crew was easy to communicate with, showed up prepared, and left the space looking clean. The new concrete completely changed the front of our home.”</p>
+          <div class="person"><div class="avatar">A</div><div><strong>Sample Homeowner</strong><span>Driveway project</span></div></div>
+        </article>
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Our patio looks sharp and feels solid. The edges, finish, and cleanup made the whole project feel professional from start to finish.”</p>
+          <div class="person"><div class="avatar">K</div><div><strong>Sample Customer</strong><span>Backyard patio</span></div></div>
+        </article>
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Fast quote, clear plan, and a strong finished slab. We would recommend them to anyone needing quality concrete work done right.”</p>
+          <div class="person"><div class="avatar">M</div><div><strong>Sample Client</strong><span>Concrete slab</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="cta-wrap">
+      <div>
+        <h2>Ready to price your concrete project?</h2>
+        <p>Send Man of Concrete a message with your location, project type, rough size, and a few photos. Make it easy to get the conversation started.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn dark" href="https://www.facebook.com/Manofconcrete86/" target="_blank" rel="noopener">Message on Facebook</a>
+        <a class="btn" href="https://www.instagram.com/man_of_concrete/" target="_blank" rel="noopener">DM on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Man of Concrete</h3>
+        <p>Premium concrete services for Whiteland, Indiana and surrounding communities. Driveways, patios, slabs, walkways, repairs, and commercial flatwork.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <p>Driveways<br>Patios<br>Slabs & pads<br>Walkways<br>Repairs<br>Decorative concrete</p>
+      </div>
+      <div>
+        <h3>Start Here</h3>
+        <p><a href="https://www.facebook.com/Manofconcrete86/" target="_blank" rel="noopener">Facebook page</a><br><a href="https://www.instagram.com/man_of_concrete/" target="_blank" rel="noopener">Instagram profile</a><br><a href="#top">Back to top</a></p>
+      </div>
+    </div>
+    <div class="container copyright">© 2026 Man of Concrete. Website mockup created for conversion-focused local service marketing.</div>
+  </footer>
+</body>
+</html>
